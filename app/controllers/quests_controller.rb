@@ -1,5 +1,5 @@
 class QuestsController < ApplicationController
-  before_action :set_quest, only: %i[ show edit update destroy ]
+  before_action :set_quest, only: %i[ update destroy ]
 
   # GET /quests or /quests.json
   def index
@@ -13,6 +13,7 @@ class QuestsController < ApplicationController
 
     respond_to do |format|
       if @quest.save
+        format.turbo_stream
         format.html { redirect_to quests_path }
       end
     end
@@ -22,6 +23,7 @@ class QuestsController < ApplicationController
   def update
     respond_to do |format|
       if @quest.update(quest_params)
+        format.turbo_stream
         format.html { redirect_to quests_path }
       end
     end
@@ -32,6 +34,7 @@ class QuestsController < ApplicationController
     @quest.destroy!
 
     respond_to do |format|
+      format.turbo_stream
       format.html { redirect_to quests_path }
     end
   end
