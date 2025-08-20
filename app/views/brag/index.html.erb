@@ -2,10 +2,10 @@
 
 <div class="container mx-auto px-6 py-10">
   <nav class="mb-6">
-    <%= link_to "← Back", quests_path, class: "text-lg text-sky-600 hover:text-sky-800 font-medium transition" %>
+    <%= link_to "← Back", quests_path, data: { testid: "back-to-quests-btn" }, class: "text-lg text-sky-600 hover:text-sky-800 font-medium transition" %>
   </nav>
 
-  <h1 class="text-5xl font-extrabold text-amber-900 mb-8">Oat (2025)</h1>
+  <h1 data-testid="title-brag-name" class="text-5xl font-extrabold text-amber-900 mb-8">Oat (2025)</h1>
 
   <div class="grid gap-8">
 
