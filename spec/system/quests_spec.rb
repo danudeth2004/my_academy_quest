@@ -32,9 +32,7 @@ RSpec.describe "Quests", type: :system do
   it "Given_VisitInQuestsListsAndWantToDeleteSomeQuest_When_ClickDeleteButton_Then_NotShowQuestIsDeleted" do
     visit quests_path
 
-    accept_confirm do
-      find("[data-testid='delete-quest-#{@quest.id}']").click
-    end
+    find("[data-testid='delete-quest-#{@quest.id}']").click
 
     expect(page).not_to have_content(@quest.title)
   end
