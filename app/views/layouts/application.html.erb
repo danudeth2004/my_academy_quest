@@ -23,6 +23,11 @@
   </head>
 
   <body class="bg-sky-100">
+    <a data-testid="github-tag-a" href="https://github.com/danudeth2004/my_academy_quest" target="_blank" rel="noopener noreferrer">
+      <button data-testid="github-tag-btn" class="fixed z-10 bottom-4 right-4 bg-white text-white p-2 rounded-full shadow-lg cursor-pointer">
+        <%= image_tag "github_logo.png", class: "w-full max-sm:h-8 h-12" %>
+      </button>
+    </a>
     <main class="container mx-auto mt-28 px-5 flex">
       <%= yield %>
     </main>
