@@ -1,24 +1,82 @@
-# README
+# Academy Quest App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Rails application to manage quests with pending and completed status tracking.
 
-Things you may want to cover:
+---
 
-* Ruby version
+## Table of Contents
 
-* System dependencies
+- [Setup Instructions](#setup-instructions)
+- [Features](#features)
+- [Running Tests](#running-tests)
 
-* Configuration
+---
 
-* Database creation
+## Setup Instructions
 
-* Database initialization
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/danudeth2004/my_academy_quest.git
+   cd my_academy_quest
+   ```
 
-* How to run the test suite
+2. **Install dependencies**
 
-* Services (job queues, cache servers, search engines, etc.)
+   ```bash
+   bundle install
+   ```
 
-* Deployment instructions
+3. **Set up environment variables**
 
-* ...
+   ```bash
+   touch .env
+   code .env
+   ```
+
+   Add the following to `.env`:
+
+   ```env
+   DB_USERNAME={your_protgresql_user}
+   DB_PASSWORD={your_protgresql_password}
+   ```
+
+4. **Setup the database**
+
+   ```bash
+   docker compose up -d db
+   ```
+
+5. **Start the development server**
+
+   ```bash
+   bin/dev
+   ```
+
+---
+
+## Features
+
+* Quest management (Create, Update, Delete)
+* Status tracking for quests (Pending / Completed)
+
+---
+
+## Running Tests
+
+### Run mini-test with:
+
+```bash
+rails test
+```
+
+Check coverage with simplecov:
+```bash
+open coverage/index.html
+```
+
+### Run system and integration tests with:
+
+```bash
+bundle exec rspec spec/system/**
+bundle exec rspec spec/integration
+```
