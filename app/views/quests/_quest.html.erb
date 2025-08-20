@@ -6,7 +6,7 @@
         <%= form.check_box :is_complete,
           { onchange: "this.form.requestSubmit()", data: { testid: "checkbox-quest-#{quest.id}" }, class: "w-5 h-5 rounded border-gray-300 cursor-pointer" } %>
       <% end %>
-      <span data-testid="quest-title-<%= quest.id %>" class="text-sm min-sm:text-lg font-medium text-gray-800 <%= 'line-through text-gray-400' if quest.is_complete %>">
+      <span data-testid="quest-title-<%= quest.id %>" class="text-sm min-sm:text-lg font-medium text-gray-800 break-words whitespace-normal overflow max-w-3xs sm:max-w-sm md:max-w-lg lg:max-w-3xl <%= 'line-through text-gray-400' if quest.is_complete %>">
         <%= quest.title %>
       </span>
     </div>
