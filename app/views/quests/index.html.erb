@@ -1,14 +1,19 @@
 <% content_for :title, "Quests" %>
 
-<div class="container flex">
-  <div class="w-full">
+<div class="container">
+  <div class="flex-1">
+    <div>
+    <%= image_tag "profile_image.jpeg", class: "w-80 h-80 object-cover" %>
+    <h1 class="font-bold text-6xl">Danudeth Ninkuha(Oat)</h1>
+    <%= link_to "See my brag", brag_path %>
+    </div>
     <h1 class="font-bold text-4xl">Quests</h1>
-    <div class="">
+    <div>
     <%= turbo_frame_tag "new_quest_form" do %>
       <%= render "form", quest: @quest %>
     <% end %>
     </div>
-    <div class="justify-center">
+    <div>
     <%= turbo_frame_tag "quests" do %>
       <%= render partial: "quest", collection: @quests, as: :quest %>
     <% end %>
