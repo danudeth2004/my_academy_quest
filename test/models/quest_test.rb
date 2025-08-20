@@ -17,8 +17,8 @@ class QuestTest < ActiveSupport::TestCase
   end
 
   test "should be show quests order by id minimum to maximum" do
-    top = [ @quest_one.id, @quest_two.id ].min
-    bottom = [ @quest_one.id, @quest_two.id ].max
-    assert_equal [ Quest.find_by(id: top), Quest.find_by(id: bottom) ], Quest.all.to_a
+    old = [ @quest_one.id, @quest_two.id ].min
+    new = [ @quest_one.id, @quest_two.id ].max
+    assert_equal [ Quest.find_by(id: new), Quest.find_by(id: old) ], Quest.all.to_a
   end
 end
